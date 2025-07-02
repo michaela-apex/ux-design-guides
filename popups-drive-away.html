@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-ups that drive users away</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .stat-highlight {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        .bad-example {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border: 1px solid #fca5a5;
+        }
+        .good-example {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            border: 1px solid #86efac;
+        }
+        .popup-demo {
+            position: relative;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            height: 200px;
+            overflow: hidden;
+        }
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-modal {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 80%;
+            max-width: 280px;
+            border: 2px solid #ef4444;
+            animation: popup-appear 0.3s ease-out;
+        }
+        @keyframes popup-appear {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .user-journey {
+            background: linear-gradient(to right, #10b981, #fbbf24, #ef4444);
+            height: 6px;
+            border-radius: 3px;
+            position: relative;
+        }
+        .journey-marker {
+            position: absolute;
+            top: -4px;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border: 3px solid #10b981;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white text-center py-20 px-4 sm:py-28">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+                Pop-ups that drive users away
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl max-w-3xl mx-auto">
+                Marketing teams love them, but pop-ups often do more harm than good. They interrupt user flow, increase bounce rates, and damage brand perception—especially when poorly timed.
+            </p>
+            <div class="mt-8">
+                <a href="#evidence" class="inline-block bg-white text-slate-800 font-semibold rounded-lg px-6 py-3 hover:bg-slate-100 transition-colors">
+                    See the evidence
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+        <!-- The Interruption Problem Section -->
+        <section class="mb-20 max-w-4xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">The interruption problem</h2>
+                <p class="text-lg text-slate-600 mb-8">Pop-ups interrupt users at the worst possible moments—when they're trying to accomplish their goals. This creates frustration and breaks the user journey.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- User Journey Without Popup -->
+                <div class="card">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-4">✅ Smooth user journey</h3>
+                    <div class="space-y-4">
+                        <div class="user-journey">
+                            <div class="journey-marker" style="left: 10%;"></div>
+                            <div class="journey-marker" style="left: 30%; border-color: #fbbf24;"></div>
+                            <div class="journey-marker" style="left: 60%; border-color: #fbbf24;"></div>
+                            <div class="journey-marker" style="left: 90%; border-color: #10b981;"></div>
+                        </div>
+                        <div class="text-sm space-y-2">
+                            <p><strong>1.</strong> User arrives with intent</p>
+                            <p><strong>2.</strong> Explores content freely</p>
+                            <p><strong>3.</strong> Finds what they need</p>
+                            <p><strong>4.</strong> Completes desired action</p>
+                        </div>
+                        <div class="bg-emerald-100 p-3 rounded-lg">
+                            <p class="text-emerald-800 font-semibold">Result: Happy user, achieved goal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- User Journey With Popup -->
+                <div class="card">
+                    <h3 class="font-bold text-red-800 text-lg mb-4">❌ Interrupted by pop-up</h3>
+                    <div class="space-y-4">
+                        <div class="user-journey">
+                            <div class="journey-marker" style="left: 10%;"></div>
+                            <div class="journey-marker" style="left: 25%; border-color: #ef4444;"></div>
+                        </div>
+                        <div class="text-sm space-y-2">
+                            <p><strong>1.</strong> User arrives with intent</p>
+                            <p><strong>2.</strong> <span class="text-red-600">POPUP INTERRUPTS</span></p>
+                            <p><strong>3.</strong> User gets frustrated</p>
+                            <p><strong>4.</strong> User leaves site</p>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded-lg">
+                            <p class="text-red-800 font-semibold">Result: Lost user, no conversion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Evidence Section -->
+        <section id="evidence" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The evidence against pop-ups</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Research consistently shows that most pop-ups hurt more than they help, especially when they interrupt the user experience.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="stat-highlight">73%</div>
+                    <p class="font-semibold text-slate-800 mt-2">of users leave websites immediately after seeing a pop-up</p>
+                    <p class="text-sm text-slate-600 mt-2">Sumo/OptinMonster research</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">35%</div>
+                    <p class="font-semibold text-slate-800 mt-2">increase in bounce rate for sites with immediate pop-ups</p>
+                    <p class="text-sm text-slate-600 mt-2">Google Analytics data</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">83%</div>
+                    <p class="font-semibold text-slate-800 mt-2">of mobile users close pop-ups without reading them</p>
+                    <p class="text-sm text-slate-600 mt-2">Mobile UX research</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">2.35%</div>
+                    <p class="font-semibold text-slate-800 mt-2">average conversion rate for pop-ups (98% don't convert)</p>
+                    <p class="text-sm text-slate-600 mt-2">Industry average across sectors</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">67%</div>
+                    <p class="font-semibold text-slate-800 mt-2">of users say pop-ups make them less likely to trust a brand</p>
+                    <p class="text-sm text-slate-600 mt-2">Brand perception studies</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path></svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">SEO penalty</p>
+                    <p class="text-sm text-slate-600 mt-2">Google explicitly penalizes intrusive interstitials on mobile</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Worst Pop-up Offenders Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The worst pop-up offenders</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">These specific types of pop-ups are particularly damaging to user experience and business results.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Newsletter Popup -->
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-4">❌ Immediate newsletter pop-up</h3>
+                    <div class="popup-demo mb-4">
+                        <div class="space-y-2">
+                            <div class="w-full h-3 bg-slate-300 rounded"></div>
+                            <div class="w-3/4 h-3 bg-slate-300 rounded"></div>
+                            <div class="w-1/2 h-3 bg-slate-300 rounded"></div>
+                        </div>
+                        <div class="popup-overlay">
+                            <div class="popup-modal text-center">
+                                <h4 class="font-bold text-red-800 text-sm mb-2">Subscribe Now!</h4>
+                                <p class="text-xs text-slate-600 mb-2">Get our newsletter</p>
+                                <div class="flex space-x-1">
+                                    <input type="text" placeholder="Email" class="text-xs p-1 border rounded flex-1">
+                                    <button class="text-xs bg-red-600 text-white px-2 py-1 rounded">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-red-700">
+                        <p><strong>Problems:</strong></p>
+                        <ul class="space-y-1">
+                            <li>• Appears before user knows if content is valuable</li>
+                            <li>• Interrupts reading flow immediately</li>
+                            <li>• Creates hostile first impression</li>
+                            <li>• Very low conversion rate (under 1%)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Exit Intent Popup -->
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-4">❌ Exit-intent pop-up</h3>
+                    <div class="popup-demo mb-4">
+                        <div class="space-y-2">
+                            <div class="w-full h-3 bg-slate-300 rounded"></div>
+                            <div class="w-3/4 h-3 bg-slate-300 rounded"></div>
+                        </div>
+                        <div class="popup-overlay">
+                            <div class="popup-modal text-center">
+                                <h4 class="font-bold text-red-800 text-sm mb-2">Wait! Don't Go!</h4>
+                                <p class="text-xs text-slate-600 mb-2">Get 20% off!</p>
+                                <div class="flex space-x-1">
+                                    <input type="text" placeholder="Email" class="text-xs p-1 border rounded flex-1">
+                                    <button class="text-xs bg-red-600 text-white px-2 py-1 rounded">Save 20%</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-red-700">
+                        <p><strong>Problems:</strong></p>
+                        <ul class="space-y-1">
+                            <li>• Triggers false positives (accidental cursor movement)</li>
+                            <li>• User has already decided to leave</li>
+                            <li>• Creates negative last impression</li>
+                            <li>• Often prevents easy closing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Age Verification -->
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-4">❌ Fake urgency pop-ups</h3>
+                    <div class="bg-red-100 p-4 rounded border-2 border-red-400 mb-4">
+                        <div class="text-center">
+                            <p class="font-bold text-red-800 text-sm">⚠️ LIMITED TIME OFFER!</p>
+                            <p class="text-xs text-red-700 mt-1">Only 3 items left in stock!</p>
+                            <p class="text-xs text-red-700">Offer expires in 05:27</p>
+                            <button class="bg-red-600 text-white text-xs px-3 py-1 mt-2 rounded">BUY NOW!</button>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-red-700">
+                        <p><strong>Problems:</strong></p>
+                        <ul class="space-y-1">
+                            <li>• Creates false scarcity and pressure</li>
+                            <li>• Damages brand trust when revealed as fake</li>
+                            <li>• Triggers user defense mechanisms</li>
+                            <li>• Often violates consumer protection laws</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Cookie Notice Abuse -->
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-4">❌ Massive cookie banners</h3>
+                    <div class="bg-red-100 p-4 rounded border-2 border-red-400 mb-4">
+                        <div class="text-center">
+                            <p class="font-bold text-red-800 text-xs">WE USE COOKIES</p>
+                            <p class="text-xs text-red-700 mt-1">This site uses cookies for analytics, personalization, and advertising. By continuing, you consent to our use of cookies.</p>
+                            <div class="flex space-x-1 mt-2">
+                                <button class="bg-red-600 text-white text-xs px-2 py-1 rounded flex-1">Accept All</button>
+                                <button class="border border-red-600 text-red-600 text-xs px-2 py-1 rounded">Manage</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-red-700">
+                        <p><strong>Problems:</strong></p>
+                        <ul class="space-y-1">
+                            <li>• Covers most of mobile screen</li>
+                            <li>• Often impossible to decline easily</li>
+                            <li>• Legal requirement turned into dark pattern</li>
+                            <li>• Blocks content access completely</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Better Alternatives Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Better alternatives that actually work</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">These approaches achieve the same business goals without alienating users.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-4">✅ Inline content offers</h3>
+                    <div class="bg-emerald-100 p-4 rounded border-2 border-emerald-400 mb-4">
+                        <div class="text-sm">
+                            <p class="font-semibold text-emerald-800">📧 Like this article?</p>
+                            <p class="text-emerald-700 text-xs mt-1">Get similar content delivered weekly</p>
+                            <div class="flex space-x-1 mt-2">
+                                <input type="text" placeholder="Email" class="text-xs p-1 border rounded flex-1">
+                                <button class="bg-emerald-600 text-white text-xs px-2 py-1 rounded">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-sm text-emerald-700">
+                        <p><strong>Why it works:</strong> Appears in natural content flow, user has already demonstrated interest</p>
+                    </div>
+                </div>
+                
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-4">✅ Contextual slide-ins</h3>
+                    <div class="bg-emerald-100 p-3 rounded border-2 border-emerald-400 mb-4 relative">
+                        <div class="absolute right-2 top-2 w-4 h-4 bg-emerald-600 rounded-full flex items-center justify-center">
+                            <span class="text-white text-xs">×</span>
+                        </div>
+                        <div class="text-sm pr-6">
+                            <p class="font-semibold text-emerald-800">💡 Quick tip</p>
+                            <p class="text-emerald-700 text-xs">Download our UX checklist</p>
+                            <button class="bg-emerald-600 text-white text-xs px-2 py-1 mt-1 rounded">Get it free</button>
+                        </div>
+                    </div>
+                    <div class="text-sm text-emerald-700">
+                        <p><strong>Why it works:</strong> Non-intrusive, easily dismissible, relevant to current page</p>
+                    </div>
+                </div>
+                
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-4">✅ Value-first approach</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-emerald-50 rounded border border-emerald-200">
+                            <p class="font-semibold text-emerald-800">Step 1: Provide value</p>
+                            <p class="text-emerald-700 text-xs">Free useful content, tools, or resources</p>
+                        </div>
+                        <div class="p-3 bg-emerald-50 rounded border border-emerald-200">
+                            <p class="font-semibold text-emerald-800">Step 2: Build trust</p>
+                            <p class="text-emerald-700 text-xs">Let users experience your expertise</p>
+                        </div>
+                        <div class="p-3 bg-emerald-50 rounded border border-emerald-200">
+                            <p class="font-semibold text-emerald-800">Step 3: Gentle ask</p>
+                            <p class="text-emerald-700 text-xs">Request contact info for more value</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-4">✅ User-controlled timing</h3>
+                    <div class="bg-emerald-100 p-4 rounded border-2 border-emerald-400 mb-4">
+                        <div class="text-sm">
+                            <p class="font-semibold text-emerald-800">Want updates?</p>
+                            <p class="text-emerald-700 text-xs mt-1">Choose how often you'd like to hear from us</p>
+                            <select class="text-xs p-1 border rounded w-full mt-1">
+                                <option>Weekly digest</option>
+                                <option>Major updates only</option>
+                                <option>No thanks</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-sm text-emerald-700">
+                        <p><strong>Why it works:</strong> Gives users control, respects preferences, builds trust</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- When Pop-ups Might Work -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">When pop-ups might work</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Very specific circumstances where pop-ups can be acceptable—but they're rare.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Legal requirements</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• GDPR cookie consent (when required by law)</p>
+                        <p>• Age verification for restricted content</p>
+                        <p>• Terms of service updates</p>
+                        <p><strong>Key:</strong> Keep minimal, easy to dismiss</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Safety warnings</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• System maintenance notices</p>
+                        <p>• Security alerts</p>
+                        <p>• Service disruption warnings</p>
+                        <p><strong>Key:</strong> Critical information only</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Deep engagement timing</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• After 2+ minutes of reading</p>
+                        <p>• When scrolling to end of article</p>
+                        <p>• After viewing multiple pages</p>
+                        <p><strong>Key:</strong> Proven interest first</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Guidelines -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">If you must use pop-ups</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Follow these guidelines to minimize damage to user experience.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Timing rules</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Wait at least 30 seconds before showing</p>
+                            <p>• Show only after user demonstrates engagement</p>
+                            <p>• Never show on first visit immediately</p>
+                            <p>• Respect "do not show again" choices</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Design requirements</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Large, obvious close button</p>
+                            <p>• Click outside to dismiss</p>
+                            <p>• Escape key closes modal</p>
+                            <p>• Clear value proposition</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Mobile considerations</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Never cover entire screen</p>
+                            <p>• Easy thumb-tap to close</p>
+                            <p>• No accidental triggers</p>
+                            <p>• Test on real devices</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Frequency limits</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Maximum once per session</p>
+                            <p>• Remember dismissals across visits</p>
+                            <p>• Different timing for return visitors</p>
+                            <p>• A/B test impact on bounce rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white mt-24 sm:mt-32">
+        <div class="max-w-4xl mx-auto text-center py-16 px-4">
+            <h2 class="text-3xl font-bold">The bottom line</h2>
+            <p class="mt-4 text-lg text-slate-300">Pop-ups might seem like an easy marketing win, but they often cost more than they gain. Focus on providing value first, then earning the right to ask for contact information.</p>
+            <p class="mt-8 text-xl font-semibold text-red-300">Respect your users' attention—it's the most valuable thing they can give you.</p>
+        </div>
+    </footer>
+
+</body>
+</html> 
