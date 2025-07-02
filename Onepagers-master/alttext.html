@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alt text that actually helps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .hero-bg {
+            background-color: #f8fafc;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .stat-highlight {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #059669; /* Emerald */
+        }
+        .good-example {
+            border-left: 4px solid #10b981; /* Emerald-500 */
+            background-color: #ecfdf5; /* Emerald-50 */
+        }
+        .bad-example {
+            border-left: 4px solid #ef4444; /* Red-500 */
+            background-color: #fef2f2; /* Red-50 */
+        }
+        pre {
+            background-color: #1f2937; /* Gray-800 */
+            color: #d1d5db; /* Gray-300 */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", monospace;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-center py-20 px-4 sm:py-28">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight">
+                Alt text that actually helps
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
+                Move beyond compliance and learn to write descriptions that provide real value to screen reader users, making your content accessible to everyone.
+            </p>
+            <div class="mt-8">
+                <a href="#examples" class="inline-block bg-emerald-600 text-white font-semibold rounded-lg px-6 py-3 hover:bg-emerald-700 transition-colors">
+                    See Good vs. Bad Examples
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+        <!-- What is Alt Text Section -->
+        <section class="mb-20 max-w-4xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">What is Alt Text and Why It Matters</h2>
+                <p class="text-lg text-slate-600 mb-8">Alt text (alternative text) is a brief description of an image that screen readers announce to blind and visually impaired users. When written well, it allows these users to understand visual content and participate fully. When written poorly, it creates frustrating barriers.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg border">
+                    <h3 class="font-bold text-slate-800 text-lg">Without Alt Text</h3>
+                    <div class="mt-4 p-4 border-2 border-dashed border-red-400 rounded-lg">
+                        <p class="text-slate-500">A user hears: "Image, graphic, IMG_2847.jpg"</p>
+                        <p class="text-red-600 font-semibold mt-2">The meaning is lost.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg border">
+                     <h3 class="font-bold text-slate-800 text-lg">With Good Alt Text</h3>
+                    <div class="mt-4 p-4 border-2 border-dashed border-emerald-400 rounded-lg">
+                        <p class="text-slate-500">A user hears: "Bar chart showing sales increased 25% in Q2."</p>
+                         <p class="text-emerald-600 font-semibold mt-2">The meaning is clear.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Highlights Section -->
+        <section class="mb-20">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The Data is Clear</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Research consistently shows that effective alt text dramatically improves the user experience and task success.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="stat-highlight">40%</div>
+                    <p class="font-semibold text-emerald-800 mt-2">Reduction in task completion time for screen reader users with effective alt text.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">60%</div>
+                    <p class="font-semibold text-emerald-800 mt-2">More likely to abandon tasks when alt text is missing or unhelpful.</p>
+                </div>
+                <div class="card text-center">
+                    <p class="text-2xl font-bold text-emerald-600">Top Barrier</p>
+                    <p class="font-semibold text-emerald-800 mt-2">Missing or poor alt text is consistently ranked as a top accessibility problem by users.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Common Mistakes Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Common Alt Text Mistakes</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Avoid these common pitfalls that frustrate users and provide no value.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bad-example p-4 rounded-lg">
+                    <h3 class="font-bold text-red-800">Mistake: Stating the Obvious</h3>
+                    <p class="text-red-700 mt-1">"Image of..." or "Picture of..." <br><span class="text-sm font-medium">(The screen reader already announces it's an image.)</span></p>
+                </div>
+                <div class="bad-example p-4 rounded-lg">
+                    <h3 class="font-bold text-red-800">Mistake: Being Too Vague</h3>
+                    <p class="text-red-700 mt-1">"Graph" or "Logo" <br><span class="text-sm font-medium">(What does the graph show? Which logo is it?)</span></p>
+                </div>
+                <div class="bad-example p-4 rounded-lg">
+                    <h3 class="font-bold text-red-800">Mistake: Focusing on Visuals</h3>
+                    <p class="text-red-700 mt-1">"Red button with rounded corners" <br><span class="text-sm font-medium">(Describe the function, not the CSS.)</span></p>
+                </div>
+                <div class="bad-example p-4 rounded-lg">
+                    <h3 class="font-bold text-red-800">Mistake: Using the Filename</h3>
+                    <p class="text-red-700 mt-1">"IMG_2847.jpg" or "hero-banner-v3.png" <br><span class="text-sm font-medium">(This provides no meaningful information.)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alt Text by Image Type Section -->
+        <section id="examples" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Writing Alt Text by Image Type</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">The right alt text depends entirely on the image's purpose. Here’s how to handle different types.</p>
+            </div>
+
+            <div class="space-y-10">
+                <!-- Informational Images -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">1. Informational Images (Charts, Graphs)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="md:col-span-1 p-4 bg-white border rounded-lg flex justify-center">
+                            <svg class="w-32 h-32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="20" width="8" height="20" fill="#a5b4fc"/><rect x="20" y="10" width="8" height="30" fill="#818cf8"/><rect x="34" y="26" width="8" height="14" fill="#6366f1"/><path d="M4 42h40" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="md:col-span-2">
+                             <div class="bad-example p-4 rounded-lg mb-4">
+                                <p><strong class="text-red-800">Bad:</strong> "Bar chart with colored bars"</p>
+                            </div>
+                            <div class="good-example p-4 rounded-lg">
+                                <p><strong class="text-emerald-800">Good:</strong> "Bar chart showing sales increased 25% from Q1 to Q2, reaching $2.3 million."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Functional Images -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">2. Functional Images (Buttons, Links)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="md:col-span-1 p-4 bg-white border rounded-lg flex justify-center">
+                            <button class="bg-blue-600 text-white p-3 rounded-full shadow-lg">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="md:col-span-2">
+                             <div class="bad-example p-4 rounded-lg mb-4">
+                                <p><strong class="text-red-800">Bad:</strong> "Magnifying glass icon"</p>
+                            </div>
+                            <div class="good-example p-4 rounded-lg">
+                                <p><strong class="text-emerald-800">Good:</strong> "Search for products"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Images -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">3. Decorative Images</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="md:col-span-1 h-32 bg-slate-800 p-4 border rounded-lg flex justify-center items-center" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
+                            <p class="text-white font-semibold text-center">Adds no information, only visual flair.</p>
+                        </div>
+                        <div class="md:col-span-2">
+                             <div class="bad-example p-4 rounded-lg mb-4">
+                                <p><strong class="text-red-800">Bad:</strong> "Abstract background with repeating cubes"</p>
+                            </div>
+                            <div class="good-example p-4 rounded-lg">
+                                <p><strong class="text-emerald-800">Good:</strong> alt="" (An empty alt attribute tells the screen reader to skip it.)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+                <!-- Logos and Branding -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">4. Logos and Branding</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="md:col-span-1 p-4 bg-white border rounded-lg flex justify-center">
+                             <div class="flex items-center space-x-2">
+                                <svg class="w-12 h-12 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                <span class="text-2xl font-bold text-slate-800">Acme Corp</span>
+                             </div>
+                        </div>
+                        <div class="md:col-span-2">
+                             <div class="bad-example p-4 rounded-lg mb-4">
+                                <p><strong class="text-red-800">Bad:</strong> "Logo"</p>
+                            </div>
+                            <div class="good-example p-4 rounded-lg">
+                                <p><strong class="text-emerald-800">Good:</strong> "Acme Corporation logo"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Technical Implementation -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Technical Implementation</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Here’s what the code looks like for different scenarios.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl border shadow-lg max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">HTML Best Practices</h3>
+<pre><code>&lt;!-- ✅ Good: An informational image --&gt;
+&lt;img src="sales-chart.png" alt="Q2 sales up 25% to $2.3M"&gt;
+
+&lt;!-- ✅ Good: A decorative image is silenced --&gt;
+&lt;img src="decorative-border.png" alt=""&gt;
+
+&lt;!-- ✅ Good: An image used as a link --&gt;
+&lt;a href="/products"&gt;
+  &lt;img src="new-product.jpg" alt="Shop our new summer collection"&gt;
+&lt;/a&gt;
+
+&lt;!-- ❌ Bad: Missing alt attribute --&gt;
+&lt;img src="important.png"&gt;
+
+&lt;!-- ❌ Bad: Useless alt attribute --&gt;
+&lt;img src="team-photo.jpg" alt="photo"&gt;
+</code></pre>
+            </div>
+        </section>
+
+
+    </main>
+    
+    <!-- The Bottom Line Section -->
+    <footer class="bg-slate-900 mt-24 sm:mt-32">
+        <div class="max-w-4xl mx-auto text-center py-16 px-4">
+             <h2 class="text-3xl font-bold text-white">The Bottom Line</h2>
+             <p class="mt-4 text-lg text-slate-300">Effective alt text isn't about describing what you see—it's about conveying what's important for users to understand. It's a fundamental part of creating an inclusive and accessible web for everyone.</p>
+             <p class="mt-8 text-xl font-semibold text-emerald-300">Think of alt text as translation: you're translating visual information into words that serve the same purpose.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

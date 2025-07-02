@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better CTAs than "learn more"</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .stat-highlight {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        .bad-example {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border: 1px solid #fca5a5;
+        }
+        .good-example {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            border: 1px solid #86efac;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-bad {
+            background: #ef4444;
+            color: white;
+        }
+        .cta-good {
+            background: #10b981;
+            color: white;
+        }
+        .cta-demo {
+            background: #f3f4f6;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white text-center py-20 px-4 sm:py-28">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+                Better CTAs than "learn more"
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl max-w-3xl mx-auto">
+                "Learn more" is the laziest call-to-action in marketing. It tells users nothing about what they'll get or why they should click. Better CTAs increase conversion rates by up to 161%.
+            </p>
+            <div class="mt-8">
+                <a href="#examples" class="inline-block bg-white text-slate-800 font-semibold rounded-lg px-6 py-3 hover:bg-slate-100 transition-colors">
+                    See specific examples
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+        <!-- The Problem with Generic CTAs -->
+        <section class="mb-20 max-w-4xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Why "learn more" fails users</h2>
+                <p class="text-lg text-slate-600 mb-8">Generic CTAs create uncertainty and friction. Users need to know exactly what happens when they click.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Bad CTA Example -->
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-4">❌ What "learn more" actually communicates</h3>
+                    <div class="cta-demo">
+                        <h4 class="font-semibold text-slate-800 mb-2">Advanced Analytics Dashboard</h4>
+                        <p class="text-sm text-slate-600 mb-3">Track your website performance with real-time insights.</p>
+                        <button class="cta-button cta-bad w-full">Learn More</button>
+                    </div>
+                    <div class="space-y-2 text-sm text-red-700">
+                        <p><strong>User thinks:</strong></p>
+                        <ul class="space-y-1">
+                            <li>• "Learn more about what exactly?"</li>
+                            <li>• "Will this take me to another page or start a demo?"</li>
+                            <li>• "How much time will this require?"</li>
+                            <li>• "Is this going to ask for my email?"</li>
+                        </ul>
+                        <p class="font-semibold text-red-800 mt-3">Result: Hesitation and lower click-through rates</p>
+                    </div>
+                </div>
+                
+                <!-- Good CTA Example -->
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-4">✅ What specific CTAs communicate</h3>
+                    <div class="cta-demo">
+                        <h4 class="font-semibold text-slate-800 mb-2">Advanced Analytics Dashboard</h4>
+                        <p class="text-sm text-slate-600 mb-3">Track your website performance with real-time insights.</p>
+                        <button class="cta-button cta-good w-full">Start Free 14-Day Trial</button>
+                    </div>
+                    <div class="space-y-2 text-sm text-emerald-700">
+                        <p><strong>User knows:</strong></p>
+                        <ul class="space-y-1">
+                            <li>• ✓ What they'll get (free trial)</li>
+                            <li>• ✓ How long it lasts (14 days)</li>
+                            <li>• ✓ What it costs (free)</li>
+                            <li>• ✓ What happens next (trial starts)</li>
+                        </ul>
+                        <p class="font-semibold text-emerald-800 mt-3">Result: Confidence and higher conversions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Evidence Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The evidence for better CTAs</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">A/B testing consistently shows that specific, action-oriented CTAs dramatically outperform generic ones.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="stat-highlight">161%</div>
+                    <p class="font-semibold text-slate-800 mt-2">increase in conversions when replacing "learn more" with specific CTAs</p>
+                    <p class="text-sm text-slate-600 mt-2">Unbounce A/B test results</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">90%</div>
+                    <p class="font-semibold text-slate-800 mt-2">improvement when adding time indicators to CTAs</p>
+                    <p class="text-sm text-slate-600 mt-2">"5-minute setup" vs "get started"</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">42%</div>
+                    <p class="font-semibold text-slate-800 mt-2">boost from first-person CTAs</p>
+                    <p class="text-sm text-slate-600 mt-2">"Start my trial" vs "start trial"</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">18%</div>
+                    <p class="font-semibold text-slate-800 mt-2">of users click CTAs without reading them</p>
+                    <p class="text-sm text-slate-600 mt-2">Button text is critical for the other 82%</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">3.5x</div>
+                    <p class="font-semibold text-slate-800 mt-2">more clicks for benefit-focused CTAs</p>
+                    <p class="text-sm text-slate-600 mt-2">"Save 3 hours weekly" vs "try now"</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Urgency works</p>
+                    <p class="text-sm text-slate-600 mt-2">But only when it's genuine and specific</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bad CTA Hall of Shame -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The CTA hall of shame</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">These overused, vague CTAs tell users nothing about what to expect.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bad-example p-4 rounded-lg text-center">
+                    <button class="cta-button cta-bad mb-3">"Learn More"</button>
+                    <p class="text-red-700 text-sm">More about what? How much more?</p>
+                </div>
+                <div class="bad-example p-4 rounded-lg text-center">
+                    <button class="cta-button cta-bad mb-3">"Click Here"</button>
+                    <p class="text-red-700 text-sm">Tells you nothing about the destination</p>
+                </div>
+                <div class="bad-example p-4 rounded-lg text-center">
+                    <button class="cta-button cta-bad mb-3">"Get Started"</button>
+                    <p class="text-red-700 text-sm">Started with what? For how long?</p>
+                </div>
+                <div class="bad-example p-4 rounded-lg text-center">
+                    <button class="cta-button cta-bad mb-3">"Try Now"</button>
+                    <p class="text-red-700 text-sm">Try what exactly? Free or paid?</p>
+                </div>
+                <div class="bad-example p-4 rounded-lg text-center">
+                    <button class="cta-button cta-bad mb-3">"Sign Up"</button>
+                    <p class="text-red-700 text-sm">For what? How much commitment?</p>
+                </div>
+                <div class="bad-example p-4 rounded-lg text-center">
+                    <button class="cta-button cta-bad mb-3">"Submit"</button>
+                    <p class="text-red-700 text-sm">Most intimidating word in web design</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Better CTA Examples -->
+        <section id="examples" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Better CTAs that actually work</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">These specific, benefit-focused CTAs tell users exactly what they'll get and why they should care.</p>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- SaaS Product CTAs -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">For SaaS products</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="good-example p-6 rounded-lg">
+                            <h4 class="font-semibold text-emerald-800 mb-3">Project Management Tool</h4>
+                            <div class="space-y-3">
+                                <button class="cta-button cta-good w-full">Start Free 30-Day Trial</button>
+                                <button class="cta-button cta-good w-full">Get My Team Organized in 5 Minutes</button>
+                                <button class="cta-button cta-good w-full">See How We'll Save You 10 Hours/Week</button>
+                            </div>
+                            <p class="text-emerald-700 text-sm mt-3"><strong>Why they work:</strong> Specific timeframes, clear benefits, no risk</p>
+                        </div>
+                        
+                        <div class="good-example p-6 rounded-lg">
+                            <h4 class="font-semibold text-emerald-800 mb-3">Analytics Dashboard</h4>
+                            <div class="space-y-3">
+                                <button class="cta-button cta-good w-full">Connect My First Data Source</button>
+                                <button class="cta-button cta-good w-full">Build My Custom Dashboard</button>
+                                <button class="cta-button cta-good w-full">Show Me My Website's Blind Spots</button>
+                            </div>
+                            <p class="text-emerald-700 text-sm mt-3"><strong>Why they work:</strong> Personal pronouns, immediate action, curiosity</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- E-commerce CTAs -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">For e-commerce</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="good-example p-6 rounded-lg">
+                            <h4 class="font-semibold text-emerald-800 mb-3">Product Purchase</h4>
+                            <div class="space-y-3">
+                                <button class="cta-button cta-good w-full">Add to Cart - Ships Today</button>
+                                <button class="cta-button cta-good w-full">Buy Now, Pay in 30 Days</button>
+                                <button class="cta-button cta-good w-full">Reserve Mine - Free Shipping</button>
+                            </div>
+                            <p class="text-emerald-700 text-sm mt-3"><strong>Why they work:</strong> Address shipping concerns, payment flexibility</p>
+                        </div>
+                        
+                        <div class="good-example p-6 rounded-lg">
+                            <h4 class="font-semibold text-emerald-800 mb-3">Email Signup</h4>
+                            <div class="space-y-3">
+                                <button class="cta-button cta-good w-full">Get 20% Off My First Order</button>
+                                <button class="cta-button cta-good w-full">Send Me Exclusive Deals</button>
+                                <button class="cta-button cta-good w-full">Notify Me of Back-in-Stock Items</button>
+                            </div>
+                            <p class="text-emerald-700 text-sm mt-3"><strong>Why they work:</strong> Clear value proposition, personal benefit</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content/Lead Generation CTAs -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">For content and lead generation</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="good-example p-6 rounded-lg">
+                            <h4 class="font-semibold text-emerald-800 mb-3">Ebooks/Guides</h4>
+                            <div class="space-y-3">
+                                <button class="cta-button cta-good w-full">Download Free 47-Page Guide</button>
+                                <button class="cta-button cta-good w-full">Get the Complete Checklist</button>
+                                <button class="cta-button cta-good w-full">Send Me the Step-by-Step Tutorial</button>
+                            </div>
+                            <p class="text-emerald-700 text-sm mt-3"><strong>Why they work:</strong> Specific page count, clear format, immediate delivery</p>
+                        </div>
+                        
+                        <div class="good-example p-6 rounded-lg">
+                            <h4 class="font-semibold text-emerald-800 mb-3">Webinars/Demos</h4>
+                            <div class="space-y-3">
+                                <button class="cta-button cta-good w-full">Reserve My Seat for Tuesday's Demo</button>
+                                <button class="cta-button cta-good w-full">Watch the 15-Minute Case Study</button>
+                                <button class="cta-button cta-good w-full">See the Live Demo Next Week</button>
+                            </div>
+                            <p class="text-emerald-700 text-sm mt-3"><strong>Why they work:</strong> Specific time commitment, clear scheduling</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Psychology Principles -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The psychology behind better CTAs</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Understanding why certain words work helps you create more effective calls-to-action.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Reduce friction</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• "Free" removes cost concerns</p>
+                        <p>• "No credit card required" eliminates commitment fear</p>
+                        <p>• Time indicators ("5 minutes") set expectations</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Create ownership</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• "My" creates personal connection</p>
+                        <p>• "Reserve" implies scarcity</p>
+                        <p>• "Get yours" suggests exclusive access</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Promise immediate value</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• "Instant access" removes waiting</p>
+                        <p>• Specific benefits ("Save 3 hours")</p>
+                        <p>• Outcome-focused language</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Use genuine urgency</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• "Limited time" (when true)</p>
+                        <p>• "While supplies last" for real inventory</p>
+                        <p>• Event-based deadlines</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Trigger curiosity</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• "See what you're missing"</p>
+                        <p>• "Discover your..." </p>
+                        <p>• "Find out if..." </p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Address objections</h3>
+                    <div class="text-sm text-slate-600 space-y-2">
+                        <p>• "No spam, unsubscribe anytime"</p>
+                        <p>• "Cancel anytime, no questions"</p>
+                        <p>• "Risk-free trial"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Writing Formula -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The better CTA formula</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Follow this structure to create CTAs that convert better than generic alternatives.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg border">
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-lg font-semibold">
+                            Action Verb + Specific Benefit + Time/Ease Indicator
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <h4 class="font-bold text-lg text-slate-800 mb-3">Action Verb</h4>
+                            <div class="text-sm text-slate-600 space-y-1">
+                                <p>• Get, Start, Download</p>
+                                <p>• Build, Create, Generate</p>
+                                <p>• Access, Unlock, Discover</p>
+                                <p>• Reserve, Claim, Secure</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <h4 class="font-bold text-lg text-slate-800 mb-3">Specific Benefit</h4>
+                            <div class="text-sm text-slate-600 space-y-1">
+                                <p>• What they'll receive</p>
+                                <p>• Problem they'll solve</p>
+                                <p>• Outcome they'll achieve</p>
+                                <p>• Value they'll gain</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <h4 class="font-bold text-lg text-slate-800 mb-3">Time/Ease</h4>
+                            <div class="text-sm text-slate-600 space-y-1">
+                                <p>• "in 5 minutes"</p>
+                                <p>• "instantly"</p>
+                                <p>• "free for 30 days"</p>
+                                <p>• "no setup required"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                        <h5 class="font-semibold text-amber-800 mb-2">Examples:</h5>
+                        <div class="text-sm space-y-1">
+                            <p>• <strong>Download</strong> + complete SEO checklist + in 2 minutes = "Download Complete SEO Checklist (2 min)"</p>
+                            <p>• <strong>Start</strong> + free trial + no credit card = "Start Free Trial - No Credit Card Required"</p>
+                            <p>• <strong>Get</strong> + personalized report + instantly = "Get My Personalized Report Instantly"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Implementation Checklist -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">CTA improvement checklist</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Use this checklist to audit and improve your existing call-to-action buttons.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Content checklist</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Starts with action verb</p>
+                            <p>• Specifies what user will get</p>
+                            <p>• Includes time or ease indicator</p>
+                            <p>• Uses first person ("my," "I")</p>
+                            <p>• Addresses main objection</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Design checklist</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• High contrast with background</p>
+                            <p>• Large enough touch target (44px+)</p>
+                            <p>• Stands out from other page elements</p>
+                            <p>• Consistent button styling</p>
+                            <p>• Clear hover/focus states</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Placement checklist</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Above the fold for primary actions</p>
+                            <p>• After explaining the value proposition</p>
+                            <p>• Multiple CTAs for long pages</p>
+                            <p>• Mobile-friendly positioning</p>
+                            <p>• Logical flow for user journey</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Testing checklist</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• A/B test against current version</p>
+                            <p>• Test on actual devices</p>
+                            <p>• Measure click-through rates</p>
+                            <p>• Track conversion rates</p>
+                            <p>• Monitor user feedback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white mt-24 sm:mt-32">
+        <div class="max-w-4xl mx-auto text-center py-16 px-4">
+            <h2 class="text-3xl font-bold">The bottom line</h2>
+            <p class="mt-4 text-lg text-slate-300">Your CTA is often the moment of truth for conversions. Generic phrases like "learn more" waste that crucial opportunity. Be specific, be clear, and tell users exactly what value they'll get.</p>
+            <p class="mt-8 text-xl font-semibold text-amber-300">Great CTAs don't just get clicks—they get the right clicks from the right people.</p>
+        </div>
+    </footer>
+
+</body>
+</html> 
