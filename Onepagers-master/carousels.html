@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why homepage carousels are bad for users</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .hero-bg {
+            background-color: #f8fafc;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .stat-highlight {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #4f46e5;
+        }
+        .animated-text-container {
+            border: 2px dashed #9ca3af;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 70px;
+        }
+        .animated-text span {
+            opacity: 0;
+            animation: fadeInOut 5s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            20%, 80% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-center py-20 px-4 sm:py-28">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight">
+                Why homepage carousels are bad for users
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
+                They might look dynamic, but they often hurt usability, hide important content, and frustrate your visitors. Let's explore why a simpler approach is more effective.
+            </p>
+            <div class="mt-8">
+                <a href="#problems" class="inline-block bg-indigo-600 text-white font-semibold rounded-lg px-6 py-3 hover:bg-indigo-700 transition-colors">
+                    See the Evidence
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+        <!-- What is a Carousel Section -->
+        <section class="mb-20 text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">First, what is a carousel?</h2>
+            <p class="text-lg text-slate-600 mb-8">A carousel (also called a slider or banner rotator) is that rotating image section at the top of many websites. It automatically cycles through different images, messages, or promotions every few seconds.</p>
+            <!-- Visual of a Carousel -->
+            <div class="bg-white p-4 rounded-xl shadow-lg border border-slate-200">
+                <div class="aspect-video bg-slate-200 rounded-lg flex items-center justify-center relative">
+                    <p class="text-slate-500 font-medium">Slide Content Here</p>
+                    <div class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/50 p-2 rounded-full backdrop-blur-sm">
+                        <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </div>
+                     <div class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 p-2 rounded-full backdrop-blur-sm">
+                        <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                        <div class="w-3 h-3 bg-indigo-600 rounded-full"></div>
+                        <div class="w-3 h-3 bg-white/80 rounded-full"></div>
+                        <div class="w-3 h-3 bg-white/80 rounded-full"></div>
+                        <div class="w-3 h-3 bg-white/80 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problems Section -->
+        <section id="problems">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The Problems are Significant</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">From banner blindness to poor performance, carousels introduce a host of usability issues.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Banner Blindness -->
+                <div class="card">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">1. People Don't See Them</h3>
+                    <p class="mb-6"><strong>Banner blindness is real.</strong> Visitors automatically ignore anything that looks like an ad. Since carousels often resemble ads, people's brains filter them out completely.</p>
+                    <div class="bg-indigo-50 p-6 rounded-lg text-center">
+                        <div class="stat-highlight">1%</div>
+                        <p class="font-semibold text-indigo-800 mt-2">of visitors click on a carousel slide. 84% of those clicks are on the very first slide.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Timing -->
+                <div class="card">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">2. The Timing is Always Wrong</h3>
+                    <p class="mb-6">Carousels either change slides before people finish reading (frustrating) or move so slowly that impatient visitors leave before seeing other content. There's no "perfect" speed.</p>
+                     <div class="animated-text-container flex items-center justify-center text-center">
+                        <p class="text-lg font-medium text-slate-800 animated-text">
+                           <span>This content changes before you can...</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Confusing -->
+                <div class="card">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">3. They Are Confusing</h3>
+                    <p class="mb-6">When content suddenly changes, it breaks concentration. It’s like trying to read a book while someone keeps flipping the pages. The movement makes it hard to focus.</p>
+                    <div class="flex justify-center items-center">
+                        <svg class="w-20 h-20 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Performance -->
+                <div class="card">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">4. They Hurt Performance</h3>
+                    <p class="mb-6">Carousels require loading multiple large images, making your site slower. Slow sites lose visitors — <strong>40% of people abandon a site that takes more than 3 seconds to load.</strong></p>
+                    <div class="flex items-center justify-around space-x-2 text-center">
+                        <div class="flex flex-col items-center">
+                            <svg class="w-12 h-12 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l-1.586-1.586a2 2 0 00-2.828 0L6 14m6-6l.01.01"></path></svg>
+                            <span class="text-sm font-medium mt-2">Heavy Images</span>
+                        </div>
+                        <svg class="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        <div class="flex flex-col items-center">
+                            <svg class="w-12 h-12 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-sm font-medium mt-2">Slow Load</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Mobile -->
+                <div class="card">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">5. They're Terrible on Mobile</h3>
+                    <p class="mb-6">On phones, the tiny navigation dots are hard to tap, swiping can be unreliable, and auto-rotation often happens while people are still trying to read.</p>
+                     <div class="w-48 mx-auto bg-slate-800 rounded-3xl p-2 border-4 border-slate-700 shadow-xl">
+                        <div class="aspect-[9/16] bg-slate-200 rounded-xl relative overflow-hidden">
+                             <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-1">
+                                <div class="w-1.5 h-1.5 bg-slate-800 rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            </div>
+                            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-5xl">👆</div>
+                            <div class="absolute top-1/2 left-1/2 text-xs font-bold -translate-y-6 -translate-x-6 text-red-600">Miss!</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 6: Hides Info -->
+                <div class="card">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">6. They Hide Important Info</h3>
+                    <p class="mb-6">If a message is important enough for your homepage, why hide it behind other slides? Your most crucial information should be visible immediately, not buried in slide 3 of 5.</p>
+                    <div class="relative h-32 flex items-center justify-center">
+                        <div class="absolute w-5/6 h-full bg-white border-2 border-slate-300 rounded-lg shadow-md transform rotate-6 top-0"></div>
+                        <div class="absolute w-5/6 h-full bg-white border-2 border-slate-300 rounded-lg shadow-md transform -rotate-3 top-0"></div>
+                        <div class="absolute w-5/6 h-full bg-white border-2 border-indigo-500 rounded-lg shadow-lg z-10 flex items-center justify-center p-4">
+                            <p class="text-center font-semibold text-indigo-700">Slide 1: Your secondary message</p>
+                        </div>
+                         <div class="absolute w-5/6 h-full bg-slate-700 text-white rounded-lg z-0 flex items-center justify-center p-4 transform translate-y-8 opacity-50">
+                            <p class="text-center font-bold">Your REAL Goal Is Hidden Here!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Users Want Section -->
+        <section class="mt-24 sm:mt-32 py-16 bg-white rounded-2xl shadow-inner border border-slate-100">
+             <div class="text-center mb-12 max-w-3xl mx-auto px-4">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">What Users Actually Want</h2>
+                <p class="mt-4 text-lg text-slate-600">Hint: It's clarity and control, not cleverness and automation.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 px-4">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Clarity Over Cleverness</h3>
+                        <p class="mt-1 text-slate-600">Visitors come to your website with a goal. They want to quickly understand what you offer and find what they need. A simple, clear message works better than a fancy rotating showcase.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                     <div class="flex-shrink-0 w-12 h-12 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Control Over Automation</h3>
+                        <p class="mt-1 text-slate-600">People want to browse at their own pace, not have content forced on them by a timer. Give users control over their own journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Better Alternatives Section -->
+        <section class="mt-24 sm:mt-32">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Better Alternatives</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">These proven solutions are clearer, faster, and more effective.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 text-center">
+                <div class="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-semibold text-slate-800">Static Hero Image</p>
+                </div>
+                 <div class="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-semibold text-slate-800">Clear Headline & CTA</p>
+                </div>
+                 <div class="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-semibold text-slate-800">Grid of Offerings</p>
+                </div>
+                 <div class="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-semibold text-slate-800">Key Action Buttons</p>
+                </div>
+                 <div class="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-semibold text-slate-800">User-Controlled Tabs</p>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+    
+    <!-- The Bottom Line Section -->
+    <footer class="bg-slate-900 mt-24 sm:mt-32">
+        <div class="max-w-4xl mx-auto text-center py-16 px-4">
+             <h2 class="text-3xl font-bold text-white">The Bottom Line</h2>
+             <p class="mt-4 text-lg text-slate-300">Carousels might look impressive to company executives, but they fail real users. They reduce engagement, hurt usability, and often hide your most important content.</p>
+             <p class="mt-8 text-xl font-semibold text-indigo-300">Good web design isn't about looking fancy — it's about helping people accomplish their goals quickly and easily.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JS for the animated text example
+        const textElement = document.querySelector('.animated-text');
+        if (textElement) {
+            const phrases = [
+                "This content changes before you can finish reading.",
+                "It's gone! Frustrating, isn't it?",
+                "Now it's back, but you lost your place."
+            ];
+            let index = 0;
+            setInterval(() => {
+                const span = document.createElement('span');
+                span.textContent = phrases[index];
+                textElement.innerHTML = '';
+                textElement.appendChild(span);
+                index = (index + 1) % phrases.length;
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

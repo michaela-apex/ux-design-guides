@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard navigation: the invisible user need</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .stat-highlight {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        .bad-example {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border: 1px solid #fca5a5;
+        }
+        .good-example {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            border: 1px solid #86efac;
+        }
+        .keyboard-demo {
+            background: #1f2937;
+            color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: monospace;
+        }
+        .focus-ring {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white text-center py-20 px-4 sm:py-28">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+                Keyboard navigation: the invisible user need
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl max-w-3xl mx-auto">
+                Millions of users rely on keyboards to navigate websites, but most designs completely ignore them. This isn't just about accessibility—it's about legal compliance and better UX for everyone.
+            </p>
+            <div class="mt-8">
+                <a href="#impact" class="inline-block bg-white text-slate-800 font-semibold rounded-lg px-6 py-3 hover:bg-slate-100 transition-colors">
+                    See the impact
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+        <!-- Who Uses Keyboard Navigation Section -->
+        <section class="mb-20 max-w-4xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Who needs keyboard navigation?</h2>
+                <p class="text-lg text-slate-600 mb-8">Far more users than you think rely on keyboards to navigate websites—and they're not all who you'd expect.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Vision impairments</h3>
+                    <p class="text-slate-600 text-sm mt-2">Users with blindness, low vision, or who use screen readers</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Motor disabilities</h3>
+                    <p class="text-slate-600 text-sm mt-2">Users who can't use a mouse due to tremors, paralysis, or missing limbs</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Power users</h3>
+                    <p class="text-slate-600 text-sm mt-2">Developers, writers, and efficiency-focused users who prefer keyboard shortcuts</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Temporary situations</h3>
+                    <p class="text-slate-600 text-sm mt-2">Broken mouse, RSI flare-ups, or using a laptop without a mouse</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Numbers Section -->
+        <section id="impact" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">The numbers are significant</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Keyboard navigation isn't a nice-to-have—it's a business necessity with real legal and financial implications.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="stat-highlight">15%</div>
+                    <p class="font-semibold text-slate-800 mt-2">of the global population lives with some form of disability</p>
+                    <p class="text-sm text-slate-600 mt-2">WHO Global Disability Statistics</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">2.2B</div>
+                    <p class="font-semibold text-slate-800 mt-2">people worldwide have vision impairments</p>
+                    <p class="text-sm text-slate-600 mt-2">That's 1 in 4 people globally</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">$13T</div>
+                    <p class="font-semibold text-slate-800 mt-2">annual disposable income of people with disabilities</p>
+                    <p class="text-sm text-slate-600 mt-2">That's a market you're excluding</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">4,000+</div>
+                    <p class="font-semibold text-slate-800 mt-2">ADA lawsuits filed in 2022 for web accessibility</p>
+                    <p class="text-sm text-slate-600 mt-2">Average settlement: $75,000</p>
+                </div>
+                <div class="card text-center">
+                    <div class="stat-highlight">98%</div>
+                    <p class="font-semibold text-slate-800 mt-2">of websites fail basic accessibility tests</p>
+                    <p class="text-sm text-slate-600 mt-2">WebAIM Million Report 2023</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path></svg>
+                    </div>
+                    <p class="font-semibold text-slate-800">Legal requirement</p>
+                    <p class="text-sm text-slate-600 mt-2">ADA compliance is mandatory for many businesses—keyboard navigation is essential</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Problems Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Common keyboard navigation failures</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">These problems make websites completely unusable for keyboard users—and they're surprisingly common.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-3">❌ Invisible focus indicators</h3>
+                    <p class="text-red-700 mb-4">Users can't see which element they've tabbed to. It's like navigating blindfolded.</p>
+                    <div class="keyboard-demo">
+                        <div class="space-y-2">
+                            <button class="bg-gray-600 px-3 py-1 rounded">Button 1</button>
+                            <button class="bg-gray-600 px-3 py-1 rounded">Button 2 (focused but invisible)</button>
+                            <button class="bg-gray-600 px-3 py-1 rounded">Button 3</button>
+                        </div>
+                        <p class="text-sm mt-2 text-gray-400">Try pressing Tab - you can't tell where you are!</p>
+                    </div>
+                </div>
+                
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-3">✅ Clear focus indicators</h3>
+                    <p class="text-emerald-700 mb-4">Users always know which element is selected and ready for interaction.</p>
+                    <div class="keyboard-demo">
+                        <div class="space-y-2">
+                            <button class="bg-gray-600 px-3 py-1 rounded">Button 1</button>
+                            <button class="bg-gray-600 px-3 py-1 rounded focus-ring">Button 2 (clearly focused)</button>
+                            <button class="bg-gray-600 px-3 py-1 rounded">Button 3</button>
+                        </div>
+                        <p class="text-sm mt-2 text-gray-400">The blue outline makes focus state obvious</p>
+                    </div>
+                </div>
+
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-3">❌ Keyboard traps</h3>
+                    <p class="text-red-700 mb-4">Users get stuck in a modal or menu and can't escape with the keyboard.</p>
+                    <div class="p-4 bg-red-100 rounded border-2 border-red-400">
+                        <p class="text-sm font-semibold text-red-800">Modal Dialog</p>
+                        <p class="text-xs text-red-700 mt-1">Focus is trapped here with no way out via keyboard!</p>
+                        <div class="mt-2 space-x-2">
+                            <button class="text-xs bg-red-200 px-2 py-1 rounded">Button 1</button>
+                            <button class="text-xs bg-red-200 px-2 py-1 rounded">Button 2</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-3">✅ Proper focus management</h3>
+                    <p class="text-emerald-700 mb-4">Users can always escape with Escape key and focus returns to the right place.</p>
+                    <div class="p-4 bg-emerald-100 rounded border-2 border-emerald-400">
+                        <p class="text-sm font-semibold text-emerald-800">Modal Dialog</p>
+                        <p class="text-xs text-emerald-700 mt-1">Press Escape to close and return focus</p>
+                        <div class="mt-2 space-x-2">
+                            <button class="text-xs bg-emerald-200 px-2 py-1 rounded">Button 1</button>
+                            <button class="text-xs bg-emerald-200 px-2 py-1 rounded">Close (Esc)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bad-example p-6 rounded-lg">
+                    <h3 class="font-bold text-red-800 text-lg mb-3">❌ Missing skip links</h3>
+                    <p class="text-red-700 mb-4">Users must tab through every navigation item to reach main content.</p>
+                    <div class="text-sm space-y-1">
+                        <p>Tab 1: Logo</p>
+                        <p>Tab 2-15: Main navigation items</p>
+                        <p>Tab 16-25: Secondary navigation</p>
+                        <p>Tab 26-35: Sidebar links</p>
+                        <p class="font-semibold text-red-800">Tab 36: Finally reach main content!</p>
+                    </div>
+                </div>
+
+                <div class="good-example p-6 rounded-lg">
+                    <h3 class="font-bold text-emerald-800 text-lg mb-3">✅ Skip to main content</h3>
+                    <p class="text-emerald-700 mb-4">Users can immediately jump to the main content they came for.</p>
+                    <div class="text-sm space-y-1">
+                        <p class="font-semibold text-emerald-800">Tab 1: "Skip to main content" link</p>
+                        <p>Tab 2: Main content area</p>
+                        <p>Tab 3-N: Content elements</p>
+                        <p class="text-emerald-700 italic">35 fewer tabs to reach what they need!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Essential Keyboard Patterns Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Essential keyboard patterns</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">These are the basic keyboard interactions every website should support.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-lg border max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-4">Navigation keys</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">Tab</kbd>
+                                <span class="text-slate-600">Move forward through interactive elements</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">Shift + Tab</kbd>
+                                <span class="text-slate-600">Move backward through elements</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">Enter</kbd>
+                                <span class="text-slate-600">Activate buttons and links</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">Space</kbd>
+                                <span class="text-slate-600">Activate buttons, check boxes</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">Esc</kbd>
+                                <span class="text-slate-600">Close modals, cancel actions</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-4">Arrow key navigation</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">↑↓</kbd>
+                                <span class="text-slate-600">Navigate menu items, radio buttons</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">←→</kbd>
+                                <span class="text-slate-600">Navigate tabs, carousels</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">Home</kbd>
+                                <span class="text-slate-600">Go to first item in group</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">End</kbd>
+                                <span class="text-slate-600">Go to last item in group</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <kbd class="px-2 py-1 bg-slate-200 rounded text-sm font-mono">Page Up/Down</kbd>
+                                <span class="text-slate-600">Scroll content areas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Implementation Guide -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Quick implementation checklist</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Start with these basics to make your site keyboard accessible.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Visual focus indicators</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Ensure all interactive elements show clear focus state</p>
+                            <p>• Use high contrast outline or background change</p>
+                            <p>• Never use <code class="bg-slate-100 px-1 rounded">outline: none</code> without replacement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Logical tab order</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Tab order follows visual layout (left-to-right, top-to-bottom)</p>
+                            <p>• Use <code class="bg-slate-100 px-1 rounded">tabindex</code> only when necessary</p>
+                            <p>• Test by tabbing through your entire page</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Skip navigation</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Add "Skip to main content" as first focusable element</p>
+                            <p>• Can be visually hidden until focused</p>
+                            <p>• Links to main content area</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Keyboard event handlers</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• All click handlers need keyboard equivalents</p>
+                            <p>• Support Enter and Space for activation</p>
+                            <p>• Handle Escape key for dismissing overlays</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ Focus management</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• When opening modals, move focus to modal</p>
+                            <p>• When closing modals, return focus to trigger</p>
+                            <p>• Trap focus within modal dialogs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-3">✅ ARIA labels</h3>
+                        <div class="text-sm text-slate-600 space-y-2">
+                            <p>• Use <code class="bg-slate-100 px-1 rounded">aria-label</code> for buttons without text</p>
+                            <p>• Add <code class="bg-slate-100 px-1 rounded">aria-expanded</code> for collapsible content</p>
+                            <p>• Use <code class="bg-slate-100 px-1 rounded">aria-describedby</code> for additional context</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white mt-24 sm:mt-32">
+        <div class="max-w-4xl mx-auto text-center py-16 px-4">
+            <h2 class="text-3xl font-bold">The bottom line</h2>
+            <p class="mt-4 text-lg text-slate-300">Keyboard navigation isn't optional—it's a legal requirement and business necessity. The good news? Basic implementation covers most use cases and dramatically improves your site's accessibility.</p>
+            <p class="mt-8 text-xl font-semibold text-blue-300">Inclusive design benefits everyone, not just people with disabilities.</p>
+        </div>
+    </footer>
+
+</body>
+</html> 
